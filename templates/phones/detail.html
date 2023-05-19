@@ -1,4 +1,5 @@
 {% extends 'layouts/index.html' %}
+{% load static %}
 
 {%block content %}
    <style type="text/css">
@@ -22,7 +23,11 @@
         }
    </style>
    <div class="phone_block">
-       <img src="/media/{{ phone.image }}" alt=""/>
+       {% if phone.image %}
+           <img src="/media/{{ phone.image }}" alt=""/>
+       {% else %}
+           <img src="{% static 'img.png' %}" alt=""/>
+       {% endif %}
        <h1>{{ phone.title }}<br> Rate: {{ post.rate }}</h1>
        <h5>{{ phone.despcription }}</h5>
 

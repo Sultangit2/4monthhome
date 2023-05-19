@@ -16,11 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from phone.views import main_page_view,phone_view
+from phone.views import main_page_view,phone_view,phone_detail_view
+from homework4month import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main_page_view),
     path('phone/', phone_view),
+    path('phone/<int:id>/', phone_detail_view),
+
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

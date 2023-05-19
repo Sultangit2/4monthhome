@@ -13,7 +13,19 @@ def main_page_view(request):
 def phone_view(request):
     if request.method == 'GET':
         phones = Product.objects.all()
-        contex = {
-            'phones':phones
+        context = {
+            'phones': phones,
         }
-        return render(request,'phones/phones.html',context=contex)
+        return render(request, 'phones/phones.html', context=context)
+
+
+def phone_detail_view(request, id):
+    if request.method == 'GET':
+        phone = Product.objects.get(id=id)
+
+        context = {
+            'phone': phone,
+            'comments': phone.comment_set.all()
+        }
+
+        return render(request, 'phones/detail.html', context=context)

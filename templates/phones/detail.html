@@ -1,0 +1,44 @@
+{% extends 'layouts/index.html' %}
+
+{%block content %}
+   <style type="text/css">
+        .phone_block {
+            width:80%;
+            margin-left: 10%;
+            margin-top: 20px;
+        }
+        .phone_block > img {
+            width: 100% ;
+        }
+        .dates {
+            display: flex;
+            justify-content: space-between;
+        }
+        .comment_block{
+            padding: 10px;
+            color: #ffffff;
+            background: #242b2e;
+            margin-top: 20px;
+        }
+   </style>
+   <div class="phone_block">
+       <img src="/media/{{ phone.image }}" alt=""/>
+       <h1>{{ phone.title }}<br> Rate: {{ post.rate }}</h1>
+       <h5>{{ phone.despcription }}</h5>
+
+       <div class="dates">
+           <h5>{{ phone.created_date }}</h5>
+           <h5>{{ phone.modified_date }}</h5>
+       </div>
+
+        <div class="comments">
+            {% for comment in comments%}
+                <div class="comment_block">
+                    <h5>{{ comment.text }}</h5>
+                </div>
+            {% endfor %}
+        </div>
+
+   </div>
+
+{% endblock %}

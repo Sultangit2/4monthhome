@@ -10,6 +10,5 @@ class ProductCreateForm(forms.Form):
     rate = forms.FloatField()
 
 
-class ProductCreateFeedback(forms.Form):
-    title = forms.FileField(required=False)
-    comment = forms.FileField(required=256)
+class ProductCreateReview(forms.Form):
+    comment = forms.CharField(max_length=100)

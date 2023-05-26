@@ -11,7 +11,7 @@
         {% for phone in phones %}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    {% if phone.rate < 2.5  %} }
+                    {% if phone.rate < 2.5  %}
                         <h5 class="card-title" style="color: forestgreen">
                             {{ phone.title }}
                         </h5>
@@ -23,6 +23,7 @@
                     <h5 class="card-title">{{ phone.title }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Rate: {{ phone.rate }}</h6>
                     <a href="/phone/{{ phone.id }}" class="card-link">More</a>
+
                 </div>
             </div>
         {% endfor %}

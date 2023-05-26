@@ -34,8 +34,12 @@
        <div class="dates">
            <h5>{{ phone.created_date }}</h5>
            <h5>{{ phone.modified_date }}</h5>
-       </div>
 
+
+        <div class="feedback">
+            <a><input type="submit" value="feedback"></a>
+
+       </div>
         <div class="comments">
             {% for comment in comments%}
                 <div class="comment_block">
